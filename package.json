@@ -1,0 +1,24 @@
+{
+  "name": "certbot-dns-vultr",
+  "version": "1.0.0",
+  "description": "Vultr DNS Authenticator plugin for Certbot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devhun/certbot-dns-vultr.git"
+  },
+  "keywords": [
+    "certbot",
+    "letsencrypt",
+    "vultr"
+  ],
+  "author": "Developer, Hun-i",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/devhun/certbot-dns-vultr/issues"
+  },
+  "homepage": "https://github.com/devhun/certbot-dns-vultr#readme"
+}
