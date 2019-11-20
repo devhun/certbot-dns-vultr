@@ -29,8 +29,7 @@
   },
   "homepage": "https://github.com/devhun/certbot-dns-vultr#readme",
   "dependencies": {
-    "@vultr/vultr-node": "^0.1.2",
-    "dotenv": "^8.2.0"
+    "@vultr/vultr-node": "^0.1.2"
   },
   "devDependencies": {}
 }
