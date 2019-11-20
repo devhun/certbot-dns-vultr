@@ -32,7 +32,5 @@
     "@vultr/vultr-node": "^0.1.2",
     "dotenv": "^8.2.0"
   },
-  "devDependencies": {
-    "pkg": "^4.4.0"
-  }
+  "devDependencies": {}
 }
