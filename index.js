@@ -85,19 +85,41 @@ const findDomainName = (domain, domains) => {
     process.exit(1)
   }
 
+  let domainName
   try {
     const domains = await getDomainList()
-    const domainName = findDomainName(env.CERTBOT_DOMAIN, domains)
-    if (domainName === undefined) return 1
+    domainName = findDomainName(env.CERTBOT_DOMAIN, domains)
+    if (domainName === undefined) throw env.CERTBOT_DOMAIN + ' is not exists domain list'
+  } catch (err) {
+    console.error(err)
+    process.exit(1)
+  }
 
-    const acmeChallenge = ('_acme-challenge.' + env.CERTBOT_DOMAIN.replace(domainName, '')).slice(0, -1)
-    const records = await getTXTRecords(domainName, acmeChallenge)
+  const acmeChallenge = ('_acme-challenge.' + env.CERTBOT_DOMAIN.replace(domainName, '')).slice(0, -1)
+  if (process.argv.length > 2) {
+    let argument = process.argv[2]
+    console.info('Argument : ', process.argv[2])
+    if (argument === 'cleanup') {
+      try {
+        const records = await getTXTRecords(domainName, acmeChallenge)
 
-    if (records.length > 1) {
-      console.info('TXT records great then is 1, delete records')
-      await deleteTXTRecords(domainName, records)
+        if (records.length > 0) {
+          console.info('_acme-challenge TXT record cleanup')
+          await deleteTXTRecords(domainName, records)
+        }
+
+        process.exit(0)
+      } catch (err) {
+        console.error(err)
+        process.exit(1)
+      }
+    } else {
+      console.error('Not supported command')
+      process.exit(1)
     }
+  }
 
+  try {
     const result = await createTXTRecord(domainName, acmeChallenge, env.CERTBOT_VALIDATION)
     console.info('_acme-challenge TXT record created after waitting', SLEEP, 'seconds')
     await sleep(SLEEP * 1000)
