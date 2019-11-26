@@ -1,6 +1,6 @@
 {
   "name": "certbot-dns-vultr",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Vultr DNS Authenticator plugin for Certbot",
   "main": "index.js",
   "bin": {
