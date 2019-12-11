@@ -5,9 +5,9 @@ This is a certbot hook script that employs vultr-cli to enable dns challenges wi
 
 ```
 $ cd ~
-$ git clond https://githumb.com/devhun/certbot-
-$ cd certbot-
-$ npm i && npm run build
+$ git clond https://githumb.com/devhun/certbot-dns-vultr
+$ cd certbot-dns-vultr
+$ npm i
 ```
 
 ## Configuration

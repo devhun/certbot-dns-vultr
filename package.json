@@ -2,16 +2,9 @@
   "name": "certbot-dns-vultr",
   "version": "1.0.1",
   "description": "Vultr DNS Authenticator plugin for Certbot",
-  "main": "index.js",
-  "bin": {
-    "app": "./index.js"
-  },
+  "main": "./index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "./pkg . --out-path dist",
-    "build-l": "./pkg . --out-path dist --targets node12-linux-x64",
-    "build-m": "./pkg . --out-path dist --targets node12-macos-x64",
-    "build-w": "./pkg . --out-path dist --targets node12-win-x64"
   },
   "repository": {
     "type": "git",
