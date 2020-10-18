@@ -62,7 +62,7 @@ const findDomainName = (domain, domains) => {
 
   let removePrefixDomain = domain
   for ( ; i<wordCount; i++) {
-    removePrefixDomain = removePrefixDomain.split('.').splice(i).join('.')
+    removePrefixDomain = removePrefixDomain.split('.').splice(i === 0 ? i : 1).join('.')
     for ( j=0; j<domains.length; j++) {
       if (domains[j].domain === removePrefixDomain) return removePrefixDomain
     }
