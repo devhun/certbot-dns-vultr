@@ -21,7 +21,11 @@
     "vultr",
     "wildcard certificate"
   ],
-  "author": "Developer, Hun-i",
+  "author": {
+    "name": "Hun-i, Song",
+    "email": "i@huns.kr",
+    "url": "https://github.com/devhun"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/devhun/certbot-dns-vultr/issues"
